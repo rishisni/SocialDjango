@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+{% block title %}Edit Profile{% endblock %}
+
+{% block content %}
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-6 shadow p-3 mb-5 bg-white rounded">
+            <h2 class="mt-4 text-center">Edit Profile</h2>
+            <div class="card">
+                <div class="card-body">
+                    <h3 class="card-title">Profile Information</h3>
+                    <form method="post">
+                        {% csrf_token %}
+
+                        <div class="form-group">
+                            <label for="id_name">Name</label>
+                            {{ profile_form.name }}
+                        </div>
+                        <div class="form-group">
+                            <label for="id_bio">Bio</label>
+                            {{ profile_form.bio }}
+                        </div>
+                        <div class="form-group">
+                            <label for="id_facebook_url">Facebook URL</label>
+                            {{ profile_form.facebook_url }}
+                        </div>
+                        <div class="form-group">
+                            <label for="id_instagram_url">Instagram URL</label>
+                            {{ profile_form.instagram_url }}
+                        </div>
+                        <div class="text-center">
+                            <button type="submit" class="btn btn-dark custom-button mt-3">Save Profile</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

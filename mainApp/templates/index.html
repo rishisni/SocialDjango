@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% block title %}Home{% endblock %}
+
+{% block content %}
+<div class="row justify-content-center">
+    <div class="col-md-6">
+        <div class="card shadow p-3 mb-5 bg-white rounded">
+            <div class="card-body">
+                <h2 class="card-title text-center">Welcome to Your Website</h2>
+                <div class="text-center mb-3">
+                    <a href="{% url 'login' %}" class="btn btn-dark custom-button"><i class="fas fa-sign-in-alt"></i>Login</a>
+                </div>
+                <div class="text-center mb-3">
+                    <a href="{% url 'register' %}" class="btn btn-dark custom-button"><i class="fas fa-user-plus"></i>Register</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

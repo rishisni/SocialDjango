@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+{% block title %}Dashboard{% endblock %}
+{% block content %}
+
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-md-8 offset-md-2 ">
+            <div class="card shadow p-3 mb-5 bg-white rounded">
+                <div class="card-body">
+                    <h1 class="card-title text-center mb-4">Social App Dashboard</h1>
+                    <div class="text-center">
+                        <p class="lead">Welcome, <strong>{{ user.username }}</strong></p>
+                    </div>
+                    {% if user.profile %}
+                        <hr>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <p><strong>Name:</strong> {{ user.profile.name }}</p>
+                                <p><strong>Bio:</strong> {{ user.profile.bio }}</p>
+                            </div>
+                            <div class="col-md-6">
+                                <ul class="list-inline">
+                                    {% if user.profile.facebook_url %}
+                                        <li class="list-inline-item">
+                                            <a href="{{ user.profile.facebook_url }}" target="_blank" class="text-decoration-none">
+                                                <i class="fab fa-facebook fa-2x"></i>
+                                            </a>
+                                        </li>
+                                    {% endif %}
+                                    {% if user.profile.instagram_url %}
+                                        <li class="list-inline-item">
+                                            <a href="{{ user.profile.instagram_url }}" target="_blank" class="text-decoration-none">
+                                                <i class="fab fa-instagram fa-2x"></i>
+                                            </a>
+                                        </li>
+                                    {% endif %}
+                                </ul>
+                            </div>
+                        </div>
+                    {% else %}
+                        <hr>
+                        <p class="lead text-center">Your profile information is not available.</p>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
