@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-07s-bpa1$!-ez%(eo$!y8zn9bh$8!07n44ru(fq&#d6+vzuhvm
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['socialdjango.azurewebsites.net']
 
 
 # Application definition
