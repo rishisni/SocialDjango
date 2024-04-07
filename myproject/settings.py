@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/5.0/ref/settings/
 """
 
 from pathlib import Path
+import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -25,7 +26,8 @@ SECRET_KEY = 'django-insecure-07s-bpa1$!-ez%(eo$!y8zn9bh$8!07n44ru(fq&#d6+vzuhvm
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['socialdjango.azurewebsites.net']
+
+ALLOWED_HOSTS = ['127.0.0.1', 'localhost','socialdjango.azurewebsites.net']
 
 
 # Application definition
@@ -141,17 +143,20 @@ LOGIN_URL = 'login'
 LOGOUT_URL = 'index'
 LOGIN_REDIRECT_URL = 'dashboard'
 
-SOCIAL_AUTH_GOOGLE_OAUTH2_KEY = '257369608807-ccqp25vla9h31lj55ta5m6vu0t9a1aik.apps.googleusercontent.com'
-SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET = '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'
+SOCIAL_AUTH_GOOGLE_OAUTH2_KEY = os.environ.get('SOCIAL_AUTH_GOOGLE_OAUTH2_KEY')
+SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET = os.environ.get('SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET')
 
-SOCIAL_AUTH_FACEBOOK_KEY = '357892737228233'
-SOCIAL_AUTH_FACEBOOK_SECRET = '7ed626bdf7fd220665a4975a43d8f5b1'
+
+SOCIAL_AUTH_FACEBOOK_KEY = os.environ.get('SOCIAL_AUTH_FACEBOOK_KEY')
+SOCIAL_AUTH_FACEBOOK_SECRET = os.environ.get('SOCIAL_AUTH_FACEBOOK_SECRET')
+
+
 
 # SMTP_SERVER = 'smtp.gmail.com'
 # SMTP_PORT = 587
-# SMTP_USERNAME = 'rishabhkirodiwal04@gmail.com'
-# SMTP_PASSWORD = 'jjvnhyvcugjpkohj '
-# SENDER_EMAIL = 'rishabhkirodiwal04@gmail.com'
+# SMTP_USERNAME = os.environ.get('SMTP_USERNAME')
+# SMTP_PASSWORD = os.environ.get('SMTP_PASSWORD')
+# SENDER_EMAIL = os.environ.get('SENDER_EMAIL')
 # OTP_EXPIRATION_MINUTES = 5
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 EMAIL_HOST = 'localhost'
