@@ -51,7 +51,7 @@ def register(request):
                 'token': default_token_generator.make_token(user),
             })
             to_email = form.cleaned_data.get('email')
-            send_mail(mail_subject, message, 'noreply@localhost', [to_email])
+            send_mail(mail_subject, message, 'noreply@socialdjango.azurewebsites.net', [to_email])
 
             return render(request, 'registration_success.html')  
     else:

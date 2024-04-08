@@ -74,7 +74,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'myproject.wsgi.application'
+# WSGI_APPLICATION = 'myproject.wsgi.application'
 
 
 # Database
@@ -153,14 +153,11 @@ SOCIAL_AUTH_FACEBOOK_SECRET = os.environ.get('SOCIAL_AUTH_FACEBOOK_SECRET')
 
 
 
-# SMTP_SERVER = 'smtp.gmail.com'
-# SMTP_PORT = 587
-# SMTP_USERNAME = os.environ.get('SMTP_USERNAME')
-# SMTP_PASSWORD = os.environ.get('SMTP_PASSWORD')
-# SENDER_EMAIL = os.environ.get('SENDER_EMAIL')
-# OTP_EXPIRATION_MINUTES = 5
-EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
-EMAIL_HOST = 'localhost'
-EMAIL_PORT = 1025  # Optional: Specify port if needed
-EMAIL_USE_TLS = False
-EMAIL_USE_SSL = False
+SMTP_SERVER = 'smtp.gmail.com'
+SMTP_PORT = 587
+SMTP_USERNAME = os.environ.get('SMTP_USERNAME')
+SMTP_PASSWORD = os.environ.get('SMTP_PASSWORD')
+SENDER_EMAIL = os.environ.get('SENDER_EMAIL')
+OTP_EXPIRATION_MINUTES = 5
+
+print(SENDER_EMAIL)
